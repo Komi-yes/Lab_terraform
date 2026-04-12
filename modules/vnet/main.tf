@@ -20,6 +20,9 @@ resource "azurerm_subnet" "mgmt" {
   address_prefixes     = ["10.10.2.0/24"]
 }
 
-output "subnet_web_id" {
-  value = azurerm_subnet.web.id
+resource "azurerm_subnet" "bastion" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = var.resource_group_name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["10.10.3.0/26"]
 }

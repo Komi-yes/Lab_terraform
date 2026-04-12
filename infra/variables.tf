@@ -5,3 +5,4 @@ variable "admin_username" { type = string }
 variable "ssh_public_key" { type = string }
 variable "allow_ssh_from_cidr" { type = string }
 variable "tags" { type = map(string) }
+variable "alert_email" { type = string }
